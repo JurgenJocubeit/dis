@@ -15,7 +15,7 @@ module Dis
       def add_model_extension
         inject_into_file(
           File.join('app/models', class_path, "#{file_name}.rb"),
-          after: "ActiveRecord::Base\n"
+          after: "ApplicationRecord\n"
         ) do
           "  include Dis::Model\n"
         end
